@@ -6,6 +6,10 @@ def signup(request):
 	###SUBMITING SIGN UP FORM###
 	if request.method == 'POST':
 		#user entered info and submittes
+		for detail in request.POST:
+			if len(detail) > 14:
+				return render(request, 'signup.html',{'error':'One of the details you entered is too long, must be less than 14 charachters'})
+
 		if request.POST['password1'] == request.POST['password2']:
 			#if passwords match
 			try:
