@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class = text-center>
+	<div class = container>
+		<h1>{{product.Title}}</h1> by: {{product.User_name}}
+		<br/>
+		<img src="{{ product.Image.url }}"/>
+		<br/>
+		Votes: {{product.Votes}}
+		<br/>
+		<div class = text-left>
+			{{product.Date}}
+		</div>
+		<br/>
+		<p>{{product.Body}}</p>
+		<br/>
+		Link: <a href="{{product.Source}}">{{product.Source}}</a>
+		<br/>
+	</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -60,9 +60,10 @@
       </form>
       <a class="nav-link" href="{% url 'create' %}">Add product</a>
       {% else %}
-        <a class="nav-link" href="{% url 'login' %}">Log In</a>
-        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+      <a class="nav-link" href="{% url 'login' %}">Log In</a>
+      <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
       {% endif %}
+      <a class="nav-link" href="{% url 'all_products' %}">All products</a>
     </ul>
   </div>
 </nav>
