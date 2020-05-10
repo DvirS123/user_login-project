@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-left">
+<div class="container">
+<h1>Post idea</h1>
+{% if error %}
+<br/>
+{{error}}
+<br/>
+{% endif %}
+
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="container">
+  Title:
+  <br/>
+  <input type="text" name="title" />
+  <br/>
+  Body:
+  <br/>
+  <input type="textbox" name="body" />
+  <br/>
+  URL:
+  <br/>
+  <input type="text" name="url" />
+  <br/>
+  Icon:
+  <br/>
+  <input type="file" name="icon" />
+  <br/>
+  Image:
+  <br/>
+  <input type="file" name="image" />
+  <br/>
+  <br/>
+  <input class="btn btn-primary" type="submit" value="Add Product"/>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
